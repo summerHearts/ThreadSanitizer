@@ -1,25 +1,72 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O8T-Gz-EcA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="xVW-ja-TBf">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="O8T-Gz-EcA" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="pG7-zh-VVl"/>
+                        <viewControllerLayoutGuide type="bottom" id="hlE-WE-NBr"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="haL-5h-dXv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khx-sN-dLd">
+                                <rect key="frame" x="102" y="310" width="171" height="47"/>
+                                <color key="backgroundColor" red="0.45969827590000001" green="0.22653556029999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Withdraw $100">
+                                    <color key="titleColor" red="0.98788275219999999" green="0.99481446100000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="withdraw:" destination="O8T-Gz-EcA" eventType="touchUpInside" id="c2w-CM-VKk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance: $100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNQ-uR-mSU">
+                                <rect key="frame" x="52" y="162" width="271" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhD-R0-XXL">
+                                <rect key="frame" x="111" y="377" width="153" height="47"/>
+                                <color key="backgroundColor" red="0.0" green="0.85633081889999996" blue="0.31274245690000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Deposit $100">
+                                    <color key="titleColor" red="0.98788275219999999" green="0.99481446100000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deposit:" destination="O8T-Gz-EcA" eventType="touchUpInside" id="IM2-M7-lys"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1176470588" green="0.12941176469999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="khx-sN-dLd" firstAttribute="centerX" secondItem="haL-5h-dXv" secondAttribute="centerX" id="2kt-nx-sJW"/>
+                            <constraint firstItem="khx-sN-dLd" firstAttribute="centerY" secondItem="haL-5h-dXv" secondAttribute="centerY" id="9tk-TE-jAe"/>
+                            <constraint firstItem="SNQ-uR-mSU" firstAttribute="centerX" secondItem="haL-5h-dXv" secondAttribute="centerX" id="XNA-03-czJ"/>
+                            <constraint firstItem="khx-sN-dLd" firstAttribute="top" secondItem="SNQ-uR-mSU" secondAttribute="bottom" constant="100" id="YBK-nQ-Yk3"/>
+                            <constraint firstItem="AhD-R0-XXL" firstAttribute="centerX" secondItem="haL-5h-dXv" secondAttribute="centerX" id="g9z-YM-8BT"/>
+                            <constraint firstItem="AhD-R0-XXL" firstAttribute="top" secondItem="khx-sN-dLd" secondAttribute="bottom" constant="20" id="wWp-Ki-HIa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="balanceLabel" destination="SNQ-uR-mSU" id="FEK-I1-5VI"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EyW-r8-9or" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>

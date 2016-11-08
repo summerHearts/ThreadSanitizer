@@ -15,6 +15,7 @@
 		AE1A69E51DD1667A00844019 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE1A69E31DD1667A00844019 /* LaunchScreen.storyboard */; };
 		AE1A69F01DD1667A00844019 /* ThreadSanitizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1A69EF1DD1667A00844019 /* ThreadSanitizerTests.m */; };
 		AE1A69FB1DD1667A00844019 /* ThreadSanitizerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1A69FA1DD1667A00844019 /* ThreadSanitizerUITests.m */; };
+		AE1A6A0A1DD1672B00844019 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1A6A091DD1672B00844019 /* Account.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		AE1A69F61DD1667A00844019 /* ThreadSanitizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreadSanitizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1A69FA1DD1667A00844019 /* ThreadSanitizerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadSanitizerUITests.m; sourceTree = "<group>"; };
 		AE1A69FC1DD1667A00844019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE1A6A081DD1672B00844019 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		AE1A6A091DD1672B00844019 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				AE1A69D91DD1667A00844019 /* AppDelegate.m */,
 				AE1A69DB1DD1667A00844019 /* ViewController.h */,
 				AE1A69DC1DD1667A00844019 /* ViewController.m */,
+				AE1A6A081DD1672B00844019 /* Account.h */,
+				AE1A6A091DD1672B00844019 /* Account.m */,
 				AE1A69DE1DD1667A00844019 /* Main.storyboard */,
 				AE1A69E11DD1667A00844019 /* Assets.xcassets */,
 				AE1A69E31DD1667A00844019 /* LaunchScreen.storyboard */,
@@ -277,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE1A69DD1DD1667A00844019 /* ViewController.m in Sources */,
+				AE1A6A0A1DD1672B00844019 /* Account.m in Sources */,
 				AE1A69DA1DD1667A00844019 /* AppDelegate.m in Sources */,
 				AE1A69D71DD1667A00844019 /* main.m in Sources */,
 			);
@@ -429,6 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AWA9R9FXT6;
 				INFOPLIST_FILE = ThreadSanitizer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.fangchuang.com.ThreadSanitizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,6 +448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AWA9R9FXT6;
 				INFOPLIST_FILE = ThreadSanitizer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.fangchuang.com.ThreadSanitizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
