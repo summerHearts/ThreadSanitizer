@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThreadSanitizer/ViewController.m"
-            timestampString = "500265870.229689"
+            timestampString = "500310105.724479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "-updateBalanceLabel"
             landmarkType = "7">
          </BreakpointContent>

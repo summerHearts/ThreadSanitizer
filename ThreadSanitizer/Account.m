@@ -12,6 +12,8 @@
 
 @property (nonatomic ,strong) dispatch_queue_t queue;
 
+@property (nonatomic ,assign) NSInteger privateBalance;
+
 @end
 
 
@@ -21,32 +23,36 @@
     self = [super init];
     if (self) {
         self.queue = dispatch_queue_create("www.fangchang.com", NULL);
-        self.balance = 0;
+        self.privateBalance = 0;
     }
     return self;
 }
 
 - (NSInteger)balance{
-    @synchronized (@(_balance)) {
-        return _balance;
-    };
+   
+    dispatch_sync(self.queue, ^{
+        _balance = self.privateBalance;
+    });
+    
+    return _balance;
+   
 }
 
 - (void)withdraw:(NSInteger)amount success:(AccountBalanceBock)success{
     dispatch_async(self.queue, ^{
-        NSInteger newBalance = self.balance - amount;
+        NSInteger newBalance = self.privateBalance - amount;
         if (newBalance<0) {
             NSLog(@"当前账户余额不足100");
             return ;
         }
         
-        sleep(2);
+        sleep(1);
         
-        self.balance = newBalance;
-        
+        self.privateBalance = newBalance;
+
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success!=nil) {
-                success(self.balance);
+                success();
             }
         });
     });
@@ -54,12 +60,13 @@
 
 - (void)deposit:(NSInteger)amount success:(AccountBalanceBock)success{
     dispatch_async(self.queue, ^{
-        NSInteger newBalance = self.balance + amount;
-        self.balance = newBalance;
+        
+        NSInteger newBalance = self.privateBalance + amount;
+        self.privateBalance = newBalance;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success!=nil) {
-                success(self.balance);
+                success();
             }
         });
     });

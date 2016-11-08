@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^AccountBalanceBock)(NSInteger );
+typedef void(^AccountBalanceBock)();
 
 @interface Account : NSObject
 

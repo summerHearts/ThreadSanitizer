@@ -31,21 +31,25 @@
 }
 
 - (IBAction)withdraw:(id)sender {
-    
+    static int a = 0;
+    NSLog(@">>>>>>  减了一百%d",a++);
     __weak __typeof(self)weakSelf = self;
-    [self.account withdraw:100 success:^(NSInteger balance) {
+    [self.account withdraw:100 success:^() {
         typeof(self) __strong strongSelf = weakSelf;
         [strongSelf  updateBalanceLabel];
     }];
 }
 
 - (IBAction)deposit:(id)sender {
-    
+    static int a = 0;
+    NSLog(@">>>>>>  加了一百%d",a++);
+
     __weak __typeof(self)weakSelf = self;
-    [self.account deposit:100 success:^(NSInteger balance) {
+    [self.account deposit:100 success:^() {
         typeof(self) __strong strongSelf = weakSelf;
         [strongSelf  updateBalanceLabel];
     }];
+
 }
 
 - (void)updateBalanceLabel{
