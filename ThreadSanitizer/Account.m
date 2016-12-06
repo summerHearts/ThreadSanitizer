@@ -29,46 +29,49 @@
 }
 
 - (NSInteger)balance{
-   
+    
     dispatch_sync(self.queue, ^{
         _balance = self.privateBalance;
     });
     
     return _balance;
-   
+    
 }
 
 - (void)withdraw:(NSInteger)amount success:(AccountBalanceBock)success{
-    dispatch_async(self.queue, ^{
-        NSInteger newBalance = self.privateBalance - amount;
-        if (newBalance<0) {
-            NSLog(@"当前账户余额不足100");
-            return ;
+    
+    NSInteger newBalance = self.privateBalance - amount;
+    if (newBalance<0) {
+        NSLog(@"当前账户余额不足100");
+        return ;
+    }
+    
+    sleep(1);
+    
+    self.privateBalance = newBalance;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (success!=nil) {
+            success();
         }
-        
-        sleep(1);
-        
-        self.privateBalance = newBalance;
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (success!=nil) {
-                success();
-            }
-        });
     });
 }
 
 - (void)deposit:(NSInteger)amount success:(AccountBalanceBock)success{
-    dispatch_async(self.queue, ^{
-        
-        NSInteger newBalance = self.privateBalance + amount;
-        self.privateBalance = newBalance;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (success!=nil) {
-                success();
-            }
-        });
+    
+    NSInteger newBalance = self.privateBalance + amount;
+    self.privateBalance = newBalance;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (success!=nil) {
+            success();
+        }
+    });
+}
+
+- (void)setPrivateBalance:(NSInteger)privateBalance{
+    dispatch_barrier_async(self.queue, ^{
+        _privateBalance = privateBalance;
     });
 }
 @end
